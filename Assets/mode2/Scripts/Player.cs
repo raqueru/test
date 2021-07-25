@@ -17,7 +17,15 @@ public class Player : MonoBehaviour
     private void Awake() {
         instance=this;
     }
+    private void Update() {
+        if(Input.GetKeyDown("return")){
+            if(Grimoire.instance.gameObject.activeSelf){
+                Grimoire.instance.OpenGrimoire();
+            }
+            Achievements.instance.OpenAchievements();
 
+        }
+    }
 
 
 }

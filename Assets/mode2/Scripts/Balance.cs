@@ -18,7 +18,7 @@ new Magic{
     Level=1,
     Mana=10,
     Element= new List<MagicElement>{ MagicElement.Fire},
-    Type= new List<MagicType>{MagicType.Attack},
+    Type= new List<MagicType>{MagicType.Attack, MagicType.Buff},
     Description= "Cria uma chama que pode ser arremessada, causando dano nos inimigos"
 },
 new Magic{
