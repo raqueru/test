@@ -28,28 +28,36 @@ public class Grimoire : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+        ShowMagics(Player.instance.lv1Magics);
+        ShowMagics(Player.instance.lv2Magics);
+        ShowMagics(Player.instance.lv3Magics);
+    }
 
-        for (int i = 0; i < Player.instance.lv1Magics.Count; i++)
+    void ShowMagics(List<Magic> list)
+    {
+
+
+        for (int i = 0; i < list.Count; i++)
         {
             MagicInfoUI magic = Instantiate(magicinfoPrefab, LayoutGroup.transform);
-            magic.Name.text = Player.instance.lv1Magics[i].Name;
-            magic.Description.text = Player.instance.lv1Magics[i].Description;
-            magic.LV.text = "LV." + Player.instance.lv1Magics[i].Level.ToString();
+            magic.Name.text = list[i].Name;
+            magic.Description.text = list[i].Description;
+            magic.LV.text = "LV." + list[i].Level.ToString();
             magic.Type.text = "Tipo: ";
-            int element = (int)Player.instance.lv1Magics[i].Element[0];
+            int element = (int)list[i].Element[0];
             magic.Elements.transform.GetChild(0).gameObject.GetComponent<Image>().sprite =
             magicElements.transform.GetChild(element).GetComponent<Image>().sprite;
-            if (Player.instance.lv1Magics[i].Element.Count > 1)
+            if (list[i].Element.Count > 1)
             {
-                element = (int)Player.instance.lv1Magics[i].Element[1];
+                element = (int)list[i].Element[1];
                 magic.Elements.transform.GetChild(1).gameObject.SetActive(true);
                 magic.Elements.transform.GetChild(1).gameObject.GetComponent<Image>().sprite =
                 magicElements.transform.GetChild(element).GetComponent<Image>().sprite;
 
             }
-            for (int j = 0; j < Player.instance.lv1Magics[i].Type.Count; j++)
+            for (int j = 0; j < list[i].Type.Count; j++)
             {
-                magic.Type.text += Player.instance.lv1Magics[i].Type[j];
+                magic.Type.text += list[i].Type[j];
                 if (j < Player.instance.lv1Magics[i].Type.Count - 1)
                 {
                     magic.Type.text += "/ ";

@@ -6,6 +6,11 @@ public static class Balance
 {
 
 
+     public static class VisualNovel
+    {
+    public static Dictionary<string,string> names= new Dictionary<string, string>()
+    {{"J","João"}, {"R","Roberto"}};
+    }
 
     public static class Magics
     {
