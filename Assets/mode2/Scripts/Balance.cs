@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class Balance
 {
@@ -10,6 +11,10 @@ public static class Balance
     {
     public static Dictionary<string,string> names= new Dictionary<string, string>()
     {{"J","João"}, {"R","Roberto"},{"narr"," "}};
+    }
+
+     public static Dictionary<string,string> JoaoSprites= new Dictionary<string, Image>()
+    {{"Sad","João"}, {"R","Roberto"},{"narr"," "}};
     }
 
     public static class Magics

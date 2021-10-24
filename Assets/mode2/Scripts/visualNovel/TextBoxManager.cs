@@ -8,6 +8,8 @@ public class TextBoxManager : MonoBehaviour
 {
     public GameObject TextBox;
 
+    public Image sprite;
+
     public Text TheText;
     public Text Name;
 
