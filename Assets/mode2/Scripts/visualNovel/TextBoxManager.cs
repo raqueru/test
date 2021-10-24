@@ -14,6 +14,7 @@ public class TextBoxManager : MonoBehaviour
     public int CurrentLine;
     public int EndLine;
 
+    private  string previousname= "";
 
     public TextAsset textFile;
     public string[] textLines;
@@ -45,22 +46,18 @@ public class TextBoxManager : MonoBehaviour
 
         string[] splitArray = textLines[CurrentLine].Split(char.Parse(":")); //Here we assing the splitted string to array by that char
         name = splitArray[0]; //Here we assign the first part to the name
+
+
         if (splitArray.Length < 2)
         {
-            Name.text = " ";
+            Name.text = previousname;
             TheText.text = name;
         }
         else
         {
 
-            if (Balance.VisualNovel.names.ContainsKey(name))
-            {
-                Name.text = Balance.VisualNovel.names[name];
-
-            }
-            else{
-                 Name.text =name;
-            }
+              Name.text= CheckDictionary(name);
+              previousname=CheckDictionary(name);
               TheText.text = splitArray[1];
         }
         if (IsActive && Input.GetKeyDown("z"))
@@ -89,6 +86,22 @@ public class TextBoxManager : MonoBehaviour
             textLines = new string[1];
             textLines = (text.text.Split('\n'));
         }
+    }
+
+
+    string CheckDictionary(string name){
+        string result="";
+        if (Balance.VisualNovel.names.ContainsKey(name))
+            {
+               result= Balance.VisualNovel.names[name];
+
+            }
+        else{
+
+              result =name;
+            }
+            return result;
+
     }
 
 }

@@ -1,9 +1,7 @@
-J: MEU NOME
-J: É
-J: IHIHI
-R: fodase
-rauk:a
-
-  E foi assim que eles se conheceram
-  e viraram namorados
----
+J: Olá amigo
+qual o seu nome?
+R: Eu sou  roberto, e voce?
+J: sou o joao
+muito prazer
+narr: Pipoca
+irra
